@@ -14,7 +14,7 @@ class Depot < Formula
       sha256 "a85e780cedb91981a07ad784b2735e6888d1fed7ec3fea6b810d86afef8417fe"
 
       def install
-        bin.install "depot"
+        bin.install "bin/depot"
 
         bash_comp = Utils.safe_popen_read("#{bin}/depot", "completion", "bash")
         fish_comp = Utils.safe_popen_read("#{bin}/depot", "completion", "fish")
@@ -30,7 +30,7 @@ class Depot < Formula
       sha256 "4586ee48899f04dd95b2eed2e15bca964a7a9547312c22f2f7fb1a9558a4b01a"
 
       def install
-        bin.install "depot"
+        bin.install "bin/depot"
 
         bash_comp = Utils.safe_popen_read("#{bin}/depot", "completion", "bash")
         fish_comp = Utils.safe_popen_read("#{bin}/depot", "completion", "fish")
@@ -49,7 +49,7 @@ class Depot < Formula
       sha256 "483b699e453587329757d18a1c2cdfbc149e345a6f3f041c4baa49dd82266631"
 
       def install
-        bin.install "depot"
+        bin.install "bin/depot"
 
         bash_comp = Utils.safe_popen_read("#{bin}/depot", "completion", "bash")
         fish_comp = Utils.safe_popen_read("#{bin}/depot", "completion", "fish")
@@ -65,7 +65,7 @@ class Depot < Formula
       sha256 "1db6464aa7e50a462a998d207f66d43368ce59e24058a9837bd0b5542daa95d6"
 
       def install
-        bin.install "depot"
+        bin.install "bin/depot"
 
         bash_comp = Utils.safe_popen_read("#{bin}/depot", "completion", "bash")
         fish_comp = Utils.safe_popen_read("#{bin}/depot", "completion", "fish")
@@ -81,7 +81,7 @@ class Depot < Formula
       sha256 "b10acb169a689308ff7bd573c6a0fb94e459555f1f6455b654b342fde03abc63"
 
       def install
-        bin.install "depot"
+        bin.install "bin/depot"
 
         bash_comp = Utils.safe_popen_read("#{bin}/depot", "completion", "bash")
         fish_comp = Utils.safe_popen_read("#{bin}/depot", "completion", "fish")
