@@ -5,13 +5,13 @@
 class Depot < Formula
   desc "The official CLI for Depot."
   homepage "https://depot.dev"
-  version "2.60.0"
+  version "2.61.0"
   license "MIT"
 
   on_macos do
-    if Hardware::CPU.arm?
-      url "https://github.com/depot/cli/releases/download/v2.60.0/depot_2.60.0_darwin_arm64.tar.gz"
-      sha256 "0f6b410ad5b9d061cd02efd9e89618a1bf4d6624fa5602e9c3b93acb9b6097f8"
+    if Hardware::CPU.intel?
+      url "https://github.com/depot/cli/releases/download/v2.61.0/depot_2.61.0_darwin_amd64.tar.gz"
+      sha256 "8d67957b9112519582cf14fbae77c75d3151bc97125822c01633a294bbaf8194"
 
       def install
         bin.install "bin/depot"
@@ -25,9 +25,9 @@ class Depot < Formula
         (zsh_completion/"_depot").write zsh_comp
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/depot/cli/releases/download/v2.60.0/depot_2.60.0_darwin_amd64.tar.gz"
-      sha256 "6de7575291fe6b2293b3ddbaa49ec1daf3b1730cc32912fe344ea11ebb57225e"
+    if Hardware::CPU.arm?
+      url "https://github.com/depot/cli/releases/download/v2.61.0/depot_2.61.0_darwin_arm64.tar.gz"
+      sha256 "664128cad07530d9c8afa754535b93d7e76ba803b4cf6e22e2be1d854dd34c46"
 
       def install
         bin.install "bin/depot"
@@ -45,8 +45,8 @@ class Depot < Formula
 
   on_linux do
     if Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
-      url "https://github.com/depot/cli/releases/download/v2.60.0/depot_2.60.0_linux_armv6.tar.gz"
-      sha256 "d7e410efd43d1684e0d53aaa949cc97aa0115ca98ce928d5b1701a5320d05a98"
+      url "https://github.com/depot/cli/releases/download/v2.61.0/depot_2.61.0_linux_armv6.tar.gz"
+      sha256 "39a93629b133e7ef8c7469cbe8020b9bc42508a17f1acfab01c6a6aee08d0932"
 
       def install
         bin.install "bin/depot"
@@ -61,8 +61,8 @@ class Depot < Formula
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/depot/cli/releases/download/v2.60.0/depot_2.60.0_linux_arm64.tar.gz"
-      sha256 "ebc809716a8e13beff262c50c64e386c601595966afcd93b84cbf31f60da98bd"
+      url "https://github.com/depot/cli/releases/download/v2.61.0/depot_2.61.0_linux_arm64.tar.gz"
+      sha256 "6261f6455263fcb47fc3222a39cb26d8dfc3afe4962beba9b82194a3793c9c8f"
 
       def install
         bin.install "bin/depot"
@@ -77,8 +77,8 @@ class Depot < Formula
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/depot/cli/releases/download/v2.60.0/depot_2.60.0_linux_amd64.tar.gz"
-      sha256 "1065415af46d7cd7cddd4ea659f0cac5612cc50b14bbebb580cb7cc9058ad2f3"
+      url "https://github.com/depot/cli/releases/download/v2.61.0/depot_2.61.0_linux_amd64.tar.gz"
+      sha256 "9e00eada66d4eb63eb978c28d82666745df3867653e376f570bceae555a92c8b"
 
       def install
         bin.install "bin/depot"
