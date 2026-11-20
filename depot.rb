@@ -5,13 +5,13 @@
 class Depot < Formula
   desc "The official CLI for Depot."
   homepage "https://depot.dev"
-  version "2.103.32"
+  version "2.103.33"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/depot/cli/releases/download/v2.103.32/depot_2.103.32_darwin_arm64.tar.gz"
-      sha256 "781a7c88d3b266e460fe91b044f2ca511af079e9abe30ed4f00a035a22b48a66"
+      url "https://github.com/depot/cli/releases/download/v2.103.33/depot_2.103.33_darwin_arm64.tar.gz"
+      sha256 "067dca1955cd615d6366122d29b6554fed5a07ab9ddf3d493a1c015766a1e6d8"
 
       def install
         bin.install "bin/depot"
@@ -26,8 +26,8 @@ class Depot < Formula
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/depot/cli/releases/download/v2.103.32/depot_2.103.32_darwin_amd64.tar.gz"
-      sha256 "7bde05a8681f20fab0ded134a21f573441c3b6c957bfa976c51f21ec0e2c5eee"
+      url "https://github.com/depot/cli/releases/download/v2.103.33/depot_2.103.33_darwin_amd64.tar.gz"
+      sha256 "8663c336813a8046a14666b9f60c87c8fb185d730e8dd63479a8bb6d6b387357"
 
       def install
         bin.install "bin/depot"
@@ -45,24 +45,8 @@ class Depot < Formula
 
   on_linux do
     if Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
-      url "https://github.com/depot/cli/releases/download/v2.103.32/depot_2.103.32_linux_armv6.tar.gz"
-      sha256 "2fdfaa449409a0fe22b345d1ec130e4027166d638417b6c011d40db297fa891f"
-
-      def install
-        bin.install "bin/depot"
-
-        bash_comp = Utils.safe_popen_read("#{bin}/depot", "completion", "bash")
-        fish_comp = Utils.safe_popen_read("#{bin}/depot", "completion", "fish")
-        zsh_comp = Utils.safe_popen_read("#{bin}/depot", "completion", "zsh")
-
-        (bash_completion/"depot").write bash_comp
-        (fish_completion/"depot.fish").write fish_comp
-        (zsh_completion/"_depot").write zsh_comp
-      end
-    end
-    if Hardware::CPU.intel?
-      url "https://github.com/depot/cli/releases/download/v2.103.32/depot_2.103.32_linux_amd64.tar.gz"
-      sha256 "fee6d75e252b682016fb47059ab2e89c871e2a7e34d351359259ed6c55724d2c"
+      url "https://github.com/depot/cli/releases/download/v2.103.33/depot_2.103.33_linux_armv6.tar.gz"
+      sha256 "d6f77b1003aa3986ab3702235b9d0bf823cbdcf00aad78831a5cb6aac6c701e9"
 
       def install
         bin.install "bin/depot"
@@ -77,8 +61,24 @@ class Depot < Formula
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/depot/cli/releases/download/v2.103.32/depot_2.103.32_linux_arm64.tar.gz"
-      sha256 "4a13130635e15e154c860864a4997f3ccfd93d17f2f3f8257fb854e4b2c1bd85"
+      url "https://github.com/depot/cli/releases/download/v2.103.33/depot_2.103.33_linux_arm64.tar.gz"
+      sha256 "e6d871a52e0bd42ca874a319fa1aa148e9fe5392f5af3b410786f8dc11165f48"
+
+      def install
+        bin.install "bin/depot"
+
+        bash_comp = Utils.safe_popen_read("#{bin}/depot", "completion", "bash")
+        fish_comp = Utils.safe_popen_read("#{bin}/depot", "completion", "fish")
+        zsh_comp = Utils.safe_popen_read("#{bin}/depot", "completion", "zsh")
+
+        (bash_completion/"depot").write bash_comp
+        (fish_completion/"depot.fish").write fish_comp
+        (zsh_completion/"_depot").write zsh_comp
+      end
+    end
+    if Hardware::CPU.intel?
+      url "https://github.com/depot/cli/releases/download/v2.103.33/depot_2.103.33_linux_amd64.tar.gz"
+      sha256 "aefc02ba61073bcadc7bc9453d7955e0c9b3f34ed33b5d66771e80efd6f8ff12"
 
       def install
         bin.install "bin/depot"
